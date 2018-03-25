@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events</title>
+	<input type="button" value="Click" id = 'btn' onclick="onBtnClick()">
+	
+</head>
+<body>
+<script type="text/javascript">
+	function onBtnClick() {
+		console.log('clicked on btn');
+		//document.getElementById('test').value = sum(3, 2);
+		addTextField(sum);
+		//document.getElementById('test').value = sum(3, 2);
+	}
+	function addTextField(callback){
+		var textfield = document.createElement('input');
+		textfield.setAttribute('type', 'text');
+		textfield.setAttribute('id', 'test');//<input  type = 'text' id = 'test'>
+		textfield.setAttribute('value', callback(10,50));
+		document.body.appendChild(textfield);
+	}
+
+	function sum(a, b){
+		return a+b;
+	}
+
+		
+</script>
+</body>
+</html>

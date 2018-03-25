@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ExtJs</title>
+	<script type="text/javascript" src="http://cdn.sencha.com/ext/gpl/5.1.0/build/ext-all-debug.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://cdn.sencha.com/ext/gpl/5.1.0/build/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css">
+</head>
+<body>
+<script type="text/javascript">
+	Ext.onReady(function() {
+     // class :  applicationName.packageName.ClassName
+     Ext.define('Person',{
+     	fname : 'test',
+     	lName : 'test',
+     	constructor: function(fname, lName) {
+     		this.fname = fname;
+     		this.lName = lName;
+     	},
+     	fullName : function(){
+     		return this.fname +' '+ this.lName;
+     	}
+     });
+
+     var p = Ext.create('Person', 'Ravi', 'Sharma');
+     console.log('p = ', p);
+    console.log(p.fullName());
+	})
+</script>
+</body>
+</html>

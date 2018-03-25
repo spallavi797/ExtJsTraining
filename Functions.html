@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Function</title>
+</head>
+<body>
+	<input type="text" id="test" name = 'abc'>
+	<input type="text" id="test" name = 'xyz'>
+ <script type="text/javascript">
+ 	var a = 30, b = 90;
+ 	function sum(){
+  		var sum = 0;
+  		console.log('in sum',arguments);
+  		for ( var i =0; i< arguments.length; i++){
+  			console.log('i = ', i);
+  			console.log('arguments['+i+'] = ', arguments[i]);
+  			sum +=  arguments[i];// sum = sum + arguments[i]; 
+  			// sum
+  		}
+  		console.log('addition',sum);
+  		return sum;
+	}
+	console.log(a);
+	//document.getElementsByTagName('input')[0]
+	document.getElementById('test').value = sum(40, 80, 10 , 20 , 30);
+	function getValue(){
+		console.log('in getValue',a+b);
+	}
+	getValue();
+
+ </script>
+ 
+</body>
+</html>

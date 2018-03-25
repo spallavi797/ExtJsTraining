@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>ExtJs</title>
+     <script type="text/javascript" src="http://cdn.sencha.com/ext/gpl/5.1.0/build/ext-all-debug.js"></script>
+     <link rel="stylesheet" type="text/css" href="http://cdn.sencha.com/ext/gpl/5.1.0/build/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css">
+</head>
+<body>
+     <div id='test'></div>
+<script type="text/javascript">
+     Ext.onReady(function() {
+     // class :  applicationName.packageName.ClassName
+        var container = Ext.create('Ext.container.Container',{
+          height: 400,
+          width : 500,
+          renderTo : Ext.getBody(),
+          
+          items: [{
+               xtype: 'panel',
+               title : 'Added using items Config',
+               html: 'Added using items Config',
+               height: 300,
+               width: 300
+               
+          }]
+        });
+       /* var panel = Ext.create('Ext.panel.Panel',{
+          title : 'My First Panel',
+          height : 300,
+          width : 300
+        });
+        container.add(panel);
+        container.updateLayout();*/
+     })
+</script>
+</body>
+</html>

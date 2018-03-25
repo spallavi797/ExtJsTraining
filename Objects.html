@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Objects</title>
+</head>
+<body>
+<script type="text/javascript">
+	var obj = {};
+	var person = {name : 'xy', age: 25};
+	console.log('typeof obj', typeof obj);
+	console.log(' obj = ',  obj);
+	console.log(' person = ',  person);
+	obj.a = 10;
+	obj.b = 20;
+	console.log(' obj = ',  obj);
+	console.log(' name = ',  person['name']);
+	console.log(' name = ',  person.name);
+	console.log(' square = ',  person['org']);
+	console.log(' dot = ',  person.org);
+	person['org'] = 'abc';
+	person.nation ='India';
+	console.log(' person = ',  person);
+	console.log('keys', Object.keys(person));
+
+
+	var a = [1, 2, 3, 4];
+	console.log(a);
+	a[0] = [5 , 6 , 7];
+	console.log(a);
+	a[0]= person;
+	console.log(a);
+	person.name = 'test'
+	console.log(a);
+</script>
+</body>
+</html>

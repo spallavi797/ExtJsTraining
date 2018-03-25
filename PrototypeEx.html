@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Prototype Example</title>
+</head>
+<body>
+<script type="text/javascript">
+	function Person(firstName, lastName){
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+	Person.prototype.fullName = function(){
+		return this.firstName + ' ' +this.lastName;
+	}
+	var a = new Person('Ravi', 'Sharma');
+	/*a.fullName = function(){
+		return this.firstName + ' ' +this.lastName;
+	}*/
+	
+	console.log(a);
+	console.log(a.fullName());
+	var b = new Person('Mukesh', 'Yadav');
+	console.log(b);
+	console.log(b.fullName());
+</script>
+</body>
+</html>
