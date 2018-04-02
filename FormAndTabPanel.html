@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Form and Tab Panel</title>
+     <script type="text/javascript" src="http://cdn.sencha.com/ext/gpl/5.1.0/build/ext-all-debug.js"></script>
+     <link rel="stylesheet" type="text/css" href="http://cdn.sencha.com/ext/gpl/5.1.0/build/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css">
+</head>
+<body>
+     <div id='test'></div>
+<script type="text/javascript">
+     Ext.onReady(function() {
+      var tabPanel = Ext.create('Ext.tab.Panel',{
+             title : 'Tab Panel',
+             renderTo : Ext.getBody(),
+             height : 500,
+             width : 500,
+             activeTab : 0,
+             items :[{
+               xtype : 'panel',
+               title : 'Registraion Form',
+               items : [{
+                xtype : 'form',
+                header : false,
+                bodyPadding : 15,
+                title : 'Registration Form',
+                buttonAlign: 'center',
+                items : [{
+                  xtype : 'textfield',
+                  fieldLabel : 'User Name',
+                  allowBlank : false,
+                  emptyText : 'Enter UserName',
+                  blankText : 'Please enter UserName',
+                  msgTarget : 'side',
+                  afterLabelTextTpl : '<span style="color:red;">*</span>',
+                  labelSeparator: ' :-',
+                  name : 'username'
+                },{
+                  xtype : 'textfield',
+                  fieldLabel : 'Phone Number',
+                  allowBlank : false,
+                  hideTrigger: true,
+                  regex: /^[0-9]{10}$/,
+                  emptyText : 'Enter 124567890',
+                  invalidText : 'Please enter valid Phone Number with 10 digits',
+                  msgTarget : 'under',
+                  afterLabelTextTpl : '<span style="color:red;">*</span>',
+                  name : 'phno'
+                },{
+                  xtype : 'textfield',
+                  fieldLabel : 'Email',
+                  name : 'email'
+                },{
+                  xtype : 'textfield',
+                  fieldLabel : 'Password',
+                  allowBlank: false,
+                  inputType : 'password',
+                  blankText : 'Please enter Password',
+                  msgTarget : 'under',
+                  afterLabelTextTpl : '<span style="color:red;">*</span>',
+                  name : 'pwd'
+                }/*,{
+                  xtype : 'container',
+                  layout :{
+                    type : 'hbox',
+                    pack : 'center'
+                  },
+                  items : [{
+                    xtype : 'button',
+                    text : 'Submit'
+                  }]
+                }*/],
+                buttons: [{
+                  text : 'Submit',
+                  formBind : true,
+                  handler : function(submitBtn){
+                    var form =  submitBtn.up('form');
+                    if(form.isValid()){
+                      Ext.toast('Submitted Sucessfully');
+                    }
+                    else{
+                      Ext.toast('Please enter correct values');
+                    }
+                  }
+                },{
+                  text : 'Cancel',
+                  handler : function(cancelBtn){
+                    var form =  cancelBtn.up('form');
+                    form.reset();
+                  }
+                }]
+               }]
+             },{
+               xtype : 'panel',
+               title : 'Tab2',
+               html : 'In tab 2'
+             },{
+               xtype : 'panel',
+               title : 'Tab3',
+               html : 'In tab 2'
+             },{
+               xtype : 'panel',
+               title : 'Tab4',
+               html : 'In tab 2'
+             }]
+        });
+        /*var formPanel = Ext.create('Ext.form.Panel',{
+         
+        });*/
+     })
+</script>
+</body>
+</html>
